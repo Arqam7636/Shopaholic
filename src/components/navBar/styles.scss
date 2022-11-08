@@ -1,0 +1,162 @@
+.navBar_main {
+  //   background-color: #6e6a6f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 20;
+
+  .nb_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+    font-family: "Cinzel";
+    color: rgb(170, 150, 138);
+    .menu_icon {
+      display: none;
+    }
+  }
+
+  // .menu {
+  //   display: none;
+  // }
+
+  .nb_links {
+    display: flex;
+    justify-content: center;
+    // background-color: #6e6a6f;
+    background-color: rgb(215, 207, 205);
+    padding: 10px 100px;
+    border-radius: 50px;
+    gap: 60px;
+
+    .nb_link {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .nb_dropdown {
+      position: relative;
+
+      .dd_p {
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      .dropdownMore {
+        position: absolute;
+        top: 29.1px;
+        width: 200px;
+        // height: 100px;
+        // background-color: whitesmoke;
+        background-color: rgb(215, 207, 205);
+
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0 20px 40px;
+        gap: 15px;
+        // border-radius: 10px;
+        z-index: 99;
+
+        .dd_link {
+          text-decoration: none;
+          font-size: 20px;
+          color: black;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .nb_search {
+    .searchBar {
+      width: 100px;
+      border-radius: 50px;
+      outline: none;
+      border: 0.5px solid gray;
+      padding: 8px 20px;
+      transition: width 0.4s ease-out;
+
+      &:focus {
+        border: 1px solid gray;
+        width: 200px;
+        transition: width 0.4s ease-out;
+      }
+
+      &::-webkit-search-cancel-button {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+$breakpoint-tabletMin: 570px;
+$breakpoint-tabletMax: 850px;
+
+$breakpoint-laptopMin: 769px;
+$breakpoint-laptopMax: 1024px;
+
+$breakpoint-mobileMin: 320px;
+$breakpoint-mobileMax: 570px;
+
+$breakpoint-foldMin: 220px;
+$breakpoint-foldMax: 320px;
+
+@media (min-width: $breakpoint-tabletMin) and (max-width: $breakpoint-tabletMax) {
+  .navBar_main {
+    .nb_logo {
+      .menu_icon {
+        display: block;
+      }
+    }
+
+    // .menu {
+    //   display: block;
+    //   // position: absolute;
+    //   // margin-left: -250px;
+    // }
+
+    .nb_links {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-mobileMin) and (max-width: $breakpoint-mobileMax) {
+  .navBar_main {
+    .nb_logo {
+      .menu_icon {
+        display: block;
+      }
+    }
+
+    // .menu {
+    //   display: block;
+    //   // position: absolute;
+    //   // margin-left: -250px;
+    // }
+
+    .nb_links {
+      display: none;
+    }
+
+    .nb_search {
+      .searchBar {
+        width: 80px;
+
+        &:focus {
+          width: 120px;
+        }
+      }
+    }
+  }
+}
